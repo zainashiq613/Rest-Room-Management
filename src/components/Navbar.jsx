@@ -1,11 +1,54 @@
 import React from "react";
+import dummyLogo from "./dummy logo.png";
+import dashboard from "./dashboard.png";
+import sensor from "./sensor.png";
+import building from "./building.png";
+import settings from "./setting.png";
+import logout from "./logout.png";
 
 export default function Navbar() {
   return (
-    <div>
-      <h2>
-        <img src="./dummy logo.png" /> Rest Room Management
-      </h2>
+    <div className="flex flex-col p-7 items-center h-screen w-[20vw] bg-gradient-to-b from-[#039099] to-[#C51FFFE0] justify-between">
+      <div className="flex items-center">
+        <img src={dummyLogo} />
+        <h2 className="text-[24px] text-white">Rest Room Management</h2>
+      </div>
+      <div className="flex flex-col justify-content-between">
+        <a
+          href="#"
+          className="flex items-center gap-3 bg-[#F5F2FF] mb-2 rounded-xl py-3 px-10"
+        >
+          <img src={dashboard} />
+          Dashboard
+        </a>
+        <a
+          href="#"
+          className="flex items-center gap-3 mb-2 rounded-xl py-4 px-8"
+        >
+          <img src={building} />
+          Buildings
+        </a>
+        <a
+          href="#"
+          className="flex items-center gap-3 mb-2 rounded-xl py-4 px-8"
+        >
+          <img src={sensor} />
+          Sensors
+        </a>
+        <a
+          href="#"
+          className="flex items-center gap-3 mb-2 rounded-xl py-4 px-8"
+        >
+          <img src={settings} />
+          Settings
+        </a>
+      </div>
+      <div className="bg-[#FAD85D] rounded-xl">
+        <a href="#" className="flex items-center gap-3 w-full p-4">
+          <img src={logout} />
+          Logout
+        </a>
+      </div>
     </div>
   );
 }
