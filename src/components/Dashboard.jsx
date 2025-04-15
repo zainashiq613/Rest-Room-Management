@@ -4,7 +4,7 @@ import DashboardBottom from "./DashboardBottom";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="bg-[#F5F2FF]">
       <DashboardTop />
       <DashboardBottom />
     </div>
