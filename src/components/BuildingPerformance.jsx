@@ -1,131 +1,57 @@
-import React, { PureComponent } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+// components/BuildingsPerformance.jsx
+// import {
+//   AreaChart,
+//   Area,
+//   XAxis,
+//   YAxis,
+//   Tooltip,
+//   ResponsiveContainer,
+// } from "recharts";
+import { XAxis, YAxis, AreaChart, Tooltip, Area } from "recharts";
 
 const data = [
-  {
-    month: "2015.01",
-    a: 4000,
-    b: 2400,
-    c: 2400,
-  },
-  {
-    month: "2015.02",
-    a: 3000,
-    b: 1398,
-    c: 2210,
-  },
-  {
-    month: "2015.03",
-    a: 2000,
-    b: 9800,
-    c: 2290,
-  },
-  {
-    month: "2015.04",
-    a: 2780,
-    b: 3908,
-    c: 2000,
-  },
-  {
-    month: "2015.05",
-    a: 1890,
-    b: 4800,
-    c: 2181,
-  },
-  {
-    month: "2015.06",
-    a: 2390,
-    b: 3800,
-    c: 2500,
-  },
-  {
-    month: "2015.07",
-    a: 3490,
-    b: 4300,
-    c: 2100,
-  },
+  { day: 1, value: 50 },
+  { day: 2, value: 12 },
+  { day: 3, value: 20 },
+  { day: 4, value: 15 },
+  { day: 5, value: 56 },
+  { day: 6, value: 16 },
+  { day: 7, value: 19 },
+  { day: 8, value: 17 },
+  { day: 9, value: 21 },
+  { day: 10, value: 22 },
+  { day: 11, value: 6 },
+  { day: 12, value: 24 },
+  { day: 13, value: 26 },
+  { day: 14, value: 23 },
+  { day: 15, value: 27 },
+  { day: 16, value: 29 },
+  { day: 17, value: 28 },
+  { day: 18, value: 30 },
+  { day: 19, value: 31 },
+  { day: 20, value: 32 },
+  { day: 21, value: 33 },
+  { day: 22, value: 26 },
+  { day: 23, value: 23 },
+  { day: 24, value: 27 },
+  { day: 25, value: 29 },
+  { day: 26, value: 28 },
+  { day: 27, value: 30 },
+  { day: 28, value: 31 },
+  { day: 29, value: 32 },
+  { day: 30, value: 33 },
 ];
 
-const toPercent = (decimal, fixed = 0) => `${(decimal * 100).toFixed(fixed)}%`;
-
-const getPercent = (value, total) => {
-  const ratio = total > 0 ? value / total : 0;
-
-  return toPercent(ratio, 2);
-};
-
-const renderTooltipContent = (o) => {
-  const { payload, label } = o;
-  const total = payload.reduce((result, entry) => result + entry.value, 0);
-
+export default function BuildingsPerformance() {
   return (
-    <div className="customized-tooltip-content">
-      <p className="total">{`${label} (Total: ${total})`}</p>
-      <ul className="list">
-        {payload.map((entry, index) => (
-          <li key={`item-${index}`} style={{ color: entry.color }}>
-            {`${entry.name}: ${entry.value}(${getPercent(entry.value, total)})`}
-          </li>
-        ))}
-      </ul>
+    <div className="bg-white p-4 basis-[70%] rounded-2xl shadow-md w-full">
+      <h2 className="text-xl font-semibold mb-4">Buildings Performance</h2>
+      <AreaChart width={700} height={280} data={data} stackOffset="expand">
+        <XAxis dataKey="day" />
+        <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#8884d8" />
+        <YAxis dataKey="value" />
+        <Tooltip />
+      </AreaChart>
     </div>
   );
-};
-
-export default class Example extends PureComponent {
-  static demoUrl =
-    "https://codesandbox.io/p/sandbox/percent-stacked-area-chart-xn7gzq";
-
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          stackOffset="expand"
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
-          <YAxis tickFormatter={toPercent} />
-          <Tooltip content={renderTooltipContent} />
-          <Area
-            type="monotone"
-            dataKey="a"
-            stackId="1"
-            stroke="#8884d8"
-            fill="#8884d8"
-          />
-          <Area
-            type="monotone"
-            dataKey="b"
-            stackId="1"
-            stroke="#82ca9d"
-            fill="#82ca9d"
-          />
-          <Area
-            type="monotone"
-            dataKey="c"
-            stackId="1"
-            stroke="#ffc658"
-            fill="#ffc658"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-    );
-  }
 }

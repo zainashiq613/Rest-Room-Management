@@ -2,6 +2,7 @@ import React from "react";
 import BottomInfo from "./BottomInfo";
 import BuildingPerformance from "./BuildingPerformance";
 import DonutChart from "./DonutChart";
+import Allbuildings from "./Allbuildings";
 
 export default function DashboardBottom() {
   return (
@@ -11,6 +12,7 @@ export default function DashboardBottom() {
         <BuildingPerformance />
         <DonutChart />
       </div>
+      <Allbuildings />
     </div>
   );
 }

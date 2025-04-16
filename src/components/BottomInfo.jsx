@@ -7,7 +7,7 @@ import infosubscriptionicon from "./info-subscription-icon.png";
 
 export default function BottomInfo() {
   return (
-    <div className="flex justify-between items-center p-2">
+    <div className="flex justify-between items-center mb-5">
       <BottomInfoItem
         title={"Total Buildings"}
         value={125}

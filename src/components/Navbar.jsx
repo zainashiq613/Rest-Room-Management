@@ -8,7 +8,7 @@ import logout from "./logout.png";
 
 export default function Navbar() {
   return (
-    <div className="flex flex-col p-7 items-center w-[20vw] bg-gradient-to-b from-[#039099] to-[#C51FFFE0] justify-between">
+    <div className="flex flex-col p-7 items-center basis-[20%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0] justify-between">
       <div className="flex items-center">
         <img src={dummyLogo} />
         <h2 className="text-[24px] text-white">Rest Room Management</h2>
