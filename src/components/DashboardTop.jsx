@@ -14,7 +14,7 @@ export default function DashboardTop() {
       <div className="flex items-center gap-4">
         <img src={nottification} />
         <img src={profilePic} />
-        <div div className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <div>
             <h3>MKS</h3>
             <p>Admin</p>

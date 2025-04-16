@@ -13,7 +13,7 @@ export default function Allbuildings() {
           View all
         </a>
       </div>
-      <div div className="grid grid-cols-3 grid-rows-1 gap-5">
+      <div className="grid grid-cols-3 grid-rows-1 gap-5">
         <BuildingItem
           address="Ayub street kotlakhpat, Lahore"
           title="Office Building"

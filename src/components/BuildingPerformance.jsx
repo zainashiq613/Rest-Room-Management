@@ -1,57 +1,92 @@
-// components/BuildingsPerformance.jsx
-// import {
-//   AreaChart,
-//   Area,
-//   XAxis,
-//   YAxis,
-//   Tooltip,
-//   ResponsiveContainer,
-// } from "recharts";
-import { XAxis, YAxis, AreaChart, Tooltip, Area } from "recharts";
+import React from "react";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 const data = [
-  { day: 1, value: 50 },
+  { day: 1, value: 10 },
   { day: 2, value: 12 },
-  { day: 3, value: 20 },
-  { day: 4, value: 15 },
-  { day: 5, value: 56 },
-  { day: 6, value: 16 },
-  { day: 7, value: 19 },
-  { day: 8, value: 17 },
-  { day: 9, value: 21 },
-  { day: 10, value: 22 },
-  { day: 11, value: 6 },
-  { day: 12, value: 24 },
-  { day: 13, value: 26 },
-  { day: 14, value: 23 },
-  { day: 15, value: 27 },
-  { day: 16, value: 29 },
-  { day: 17, value: 28 },
-  { day: 18, value: 30 },
-  { day: 19, value: 31 },
-  { day: 20, value: 32 },
-  { day: 21, value: 33 },
-  { day: 22, value: 26 },
-  { day: 23, value: 23 },
-  { day: 24, value: 27 },
-  { day: 25, value: 29 },
-  { day: 26, value: 28 },
-  { day: 27, value: 30 },
-  { day: 28, value: 31 },
-  { day: 29, value: 32 },
-  { day: 30, value: 33 },
+  { day: 3, value: 13 },
+  { day: 4, value: 22 },
+  { day: 5, value: 23 },
+  { day: 6, value: 23 },
+  { day: 7, value: 25 },
+  { day: 8, value: 35 },
+  { day: 9, value: 38 },
+  { day: 10, value: 43 },
+  { day: 11, value: 21 },
+  { day: 12, value: 39 },
+  { day: 13, value: 20 },
+  { day: 14, value: 40 },
+  { day: 15, value: 45 },
+  { day: 16, value: 25 },
+  { day: 17, value: 44 },
+  { day: 18, value: 35 },
+  { day: 19, value: 34 },
+  { day: 20, value: 33 },
+  { day: 21, value: 30 },
+  { day: 22, value: 29 },
+  { day: 23, value: 12 },
+  { day: 24, value: 18 },
+  { day: 25, value: 10 },
+  { day: 26, value: 12 },
+  { day: 27, value: 9 },
+  { day: 28, value: 11 },
+  { day: 29, value: 8 },
+  { day: 30, value: 10 },
 ];
 
-export default function BuildingsPerformance() {
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white rounded-lg p-2 shadow text-sm text-center border">
+        <p className="text-xs text-gray-500">15 July 2024</p>
+        <p className="text-purple-600 text-lg font-semibold">45%</p>
+        <p className="text-green-500">↑</p>
+      </div>
+    );
+  }
+  return null;
+};
+
+const BuildingsPerformanceChart = () => {
   return (
-    <div className="bg-white p-4 basis-[70%] rounded-2xl shadow-md w-full">
-      <h2 className="text-xl font-semibold mb-4">Buildings Performance</h2>
-      <AreaChart width={700} height={280} data={data} stackOffset="expand">
-        <XAxis dataKey="day" />
-        <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#8884d8" />
-        <YAxis dataKey="value" />
-        <Tooltip />
-      </AreaChart>
+    <div className="p-4 rounded-2xl w-185 shadow-md bg-white">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-lg font-semibold">Buildings Performance</h2>
+        <div className="text-purple-600 text-sm border rounded px-2 py-1 cursor-pointer">
+          This Month ▼
+        </div>
+      </div>
+      <ResponsiveContainer width="100%" height={202}>
+        <AreaChart data={data}>
+          <defs>
+            <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#a78bfa" stopOpacity={0.6} />
+              <stop offset="95%" stopColor="#a78bfa" stopOpacity={0.1} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <XAxis dataKey="day" />
+          <YAxis domain={[0, 50]} tickFormatter={(val) => `${val}%`} />
+          <Tooltip content={<CustomTooltip />} />
+          <Area
+            type="monotone"
+            dataKey="value"
+            stroke="#a78bfa"
+            fillOpacity={1}
+            fill="url(#colorValue)"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </div>
   );
-}
+};
+
+export default BuildingsPerformanceChart;
