@@ -16,13 +16,13 @@ export default function BottomInfo() {
       />
       <BottomInfoItem
         title={"Total Restrooms"}
-        value={125}
+        value={250}
         icon={inforestroomicon}
         desc={"8.5% Up from yesterday"}
       />
       <BottomInfoItem
         title={"Total Buildings"}
-        value={250}
+        value={350}
         icon={infosensoricon}
         desc={"8.5% Up from yesterday"}
       />
