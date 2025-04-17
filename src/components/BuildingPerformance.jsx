@@ -72,7 +72,7 @@ const BuildingsPerformanceChart = () => {
               <stop offset="95%" stopColor="#a78bfa" stopOpacity={0.1} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <CartesianGrid strokeDasharray="33" vertical={false} />
           <XAxis dataKey="day" />
           <YAxis domain={[0, 50]} tickFormatter={(val) => `${val}%`} />
           <Tooltip content={<CustomTooltip />} />
