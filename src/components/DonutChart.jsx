@@ -4,9 +4,9 @@ import Buildingicon from "./buildingicon.png";
 import vector from "./Vector.png";
 
 const data = [
-  { name: "Building 1", value: 70, color: "#a78bfa" }, // Purple
-  { name: "Building 2", value: 36, color: "#fb923c" }, // Orange
-  { name: "Building 3", value: 24, color: "#38bdf8" }, // Blue
+  { name: "Building 1", value: 70, color: "#a78bfa" },
+  { name: "Building 2", value: 26, color: "#fb923c" },
+  { name: "Building 3", value: 14, color: "#38bdf8" },
 ];
 
 const TopBuildingsChart = () => {

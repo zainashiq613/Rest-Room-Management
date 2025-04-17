@@ -57,14 +57,14 @@ const CustomTooltip = ({ active, payload }) => {
 
 const BuildingsPerformanceChart = () => {
   return (
-    <div className="p-4 rounded-2xl w-185 shadow-md bg-white">
+    <div className="p-4 rounded-2xl mb-5 shadow-md bg-white">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">Buildings Performance</h2>
         <div className="text-purple-600 text-sm border rounded px-2 py-1 cursor-pointer">
           This Month ▼
         </div>
       </div>
-      <ResponsiveContainer width="100%" height={232}>
+      <ResponsiveContainer height={232}>
         <AreaChart data={data}>
           <defs>
             <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
@@ -73,8 +73,20 @@ const BuildingsPerformanceChart = () => {
             </linearGradient>
           </defs>
           <CartesianGrid opacity={0.5} />
-          <XAxis dataKey="day" />
-          <YAxis domain={[0, 50]} tickCount={6} tickFormatter={(val) => `${val}%`} />
+          <XAxis
+            dataKey="day"
+            tick={{ fontSize: 13 }}
+            tickCount={30}
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis
+            axisLine={false}
+            tickLine={false}
+            domain={[0, 50]}
+            tickCount={6}
+            tickFormatter={(val) => `${val}%`}
+          />
           <Tooltip content={<CustomTooltip />} />
           <Area
             type="monotone"

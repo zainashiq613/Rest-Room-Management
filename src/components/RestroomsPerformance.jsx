@@ -1,75 +1,122 @@
-import React from 'react';
-import { Line } from 'react-chartjs-2';
+import React, { PureComponent } from "react";
 import {
-  Chart as ChartJS,
-  LineElement,
-  PointElement,
-  LinearScale,
-  CategoryScale,
-} from 'chart.js';
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
-ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale);
+const data = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    amt: 2400,
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+    amt: 2210,
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+    amt: 2290,
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    amt: 2000,
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    amt: 2181,
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+    amt: 2500,
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    amt: 2100,
+  },
+];
 
-const RestroomsPerformance = () => {
-  const data = {
-    labels: ['5 May', '6 May', '7 May', '8 May', '9 May', '10 May', '11 May', '12 May', '13 May'],
-    datasets: [
-      {
-        label: 'Performance',
-        data: [0, 300, 500, 280, 600, 600, 600, 580, 350],
-        borderColor: '#00A9A4',
-        tension: 0.4,
-        fill: false,
-        pointRadius: 0,
-        pointHoverRadius: 0,
-      },
-    ],
-  };
+class CustomizedLabel extends PureComponent {
+  render() {
+    const { x, y, stroke, value } = this.props;
 
-  const options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-    },
-    scales: {
-      x: {
-        grid: { display: false },
-        ticks: { color: '#9E9E9E', font: { size: 12 } },
-      },
-      y: {
-        min: 0,
-        max: 600,
-        ticks: {
-          stepSize: 100,
-          color: '#9E9E9E',
-          font: { size: 12 },
-        },
-        grid: { color: '#E0E0E0' },
-      },
-    },
-  };
+    return (
+      <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">
+        {value}
+      </text>
+    );
+  }
+}
 
-  return (
-    <div className="basis-[30%] bg-white rounded-[16px] shadow p-6 font-sans">
-      <h2 className="text-black text-lg font-semibold mb-4">Restrooms Performance</h2>
+class CustomizedAxisTick extends PureComponent {
+  render() {
+    const { x, y, payload } = this.props;
 
-      <div className="relative h-[240px]">
-        <Line data={data} options={options} />
-        <div className="absolute top-[40px] left-[200px] bg-white rounded-[12px] px-4 py-2 shadow text-sm text-center">
-          <div className="text-teal-600 text-xl font-bold">590</div>
-          <div className="text-gray-500 text-xs">Monday, April 22nd</div>
-        </div>
-      </div>
+    return (
+      <g transform={`translate(${x},${y})`}>
+        <text
+          x={0}
+          y={0}
+          dy={16}
+          textAnchor="end"
+          fill="#666"
+          transform="rotate(-35)"
+        >
+          {payload.value}
+        </text>
+      </g>
+    );
+  }
+}
 
-      <div className="mt-6 flex justify-between items-center">
-        <p className="text-gray-500 text-sm">
-          You performance is 50% better<br />compare to last month
-        </p>
-        <span className="text-black text-2xl font-semibold">50%</span>
-      </div>
-    </div>
-  );
-};
-
-export default RestroomsPerformance;
+export default class Example extends PureComponent {
+  render() {
+    return (
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 10,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="pv"
+            stroke="#8884d8"
+            label={<CustomizedLabel />}
+          />
+          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        </LineChart>
+      </ResponsiveContainer>
+    );
+  }
+}
