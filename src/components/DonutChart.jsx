@@ -17,7 +17,7 @@ const TopBuildingsChart = () => {
         <h2 className="text-lg font-semibold">Top Buildings</h2>
       </div>
 
-      <div className="relative h-39">
+      <div className="relative h-45">
         <ResponsiveContainer>
           <PieChart>
             <Pie
