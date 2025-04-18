@@ -11,7 +11,7 @@ export default function DashboardBottom() {
   return (
     <div className="py-7 px-5">
       <BottomInfo />
-      <div>
+      <div className="flex gap-5 justify-between items-center">
         <Buildingperformance />
         <TopBuildings />
       </div>

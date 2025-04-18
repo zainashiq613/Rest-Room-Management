@@ -12,7 +12,7 @@ const data = [
 
 const TopBuildings = () => {
   return (
-    <div className="mt-5 rounded-2xl shadow-lg p-6 bg-white">
+    <div className="basis-[31%] rounded-2xl shadow-lg p-6 bg-white">
       <div className="flex items-center gap-2 mb-6">
         <img src={buildingicon} />
         <h2 className="text-lg font-semibold">Top Buildings</h2>
@@ -67,7 +67,7 @@ const TopBuildings = () => {
               className="w-3 h-3 rounded-full inline-block"
               style={{ backgroundColor: entry.color }}
             ></span>
-            <span>{entry.name}</span>
+            <span className="text-[11px]">{entry.name}</span>
           </div>
         ))}
       </div>

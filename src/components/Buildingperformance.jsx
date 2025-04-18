@@ -193,7 +193,7 @@ const renderTooltipContent = ({ payload }) => {
 };
 export default function Buildingperformance() {
   return (
-    <div className="bg-white rounded-xl h-90 py-3 px-4">
+    <div className="basis-[80%] bg-white shadow-lg rounded-xl h-87 py-3 px-4">
       <div className="flex justify-between items-center mb-5">
         <h1 className="text-[20px] font-bold"> Buildings Performance </h1>
         <span className="flex border py-1.5 px-2 text-[16px] rounded-md text-[#A449EB] items-center">
@@ -217,7 +217,12 @@ export default function Buildingperformance() {
           }}
         >
           <CartesianGrid opacity={0.4} />
-          <XAxis dataKey="day" axisLine={false} tickLine={false} />
+          <XAxis
+            dataKey="day"
+            fontSize={10}
+            axisLine={false}
+            tickLine={false}
+          />
           <YAxis
             dataKey="value"
             axisLine={false}

@@ -38,42 +38,6 @@ export default function RestRoomsActivity() {
     setHoveredLine(null);
   };
 
-  // Custom Tooltip content
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div
-          className="custom-tooltip"
-          style={{
-            backgroundColor: "#fff",
-            padding: "10px",
-            borderRadius: "4px",
-            border: "1px solid #ccc",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-          }}
-        >
-          <p className="label">{`Date: ${label}`}</p>
-          {payload.map((entry, index) => (
-            <div
-              key={`item-${index}`}
-              style={{
-                color: entry.stroke,
-                fontWeight: "bold",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <span>{entry.name}</span>
-              <span>{entry.value}</span>
-            </div>
-          ))}
-        </div>
-      );
-    }
-
-    return null;
-  };
-
   return (
     <div className="bg-white mt-5 rounded-xl shadow-lg p-6">
       <div className="flex justify-between items-center">
@@ -102,10 +66,9 @@ export default function RestRoomsActivity() {
             <CartesianGrid opacity={0.3} vertical={false} />
             <YAxis
               tickCount={6}
-              tickMargin={30}
+              tickMargin={40}
               tickLine={false}
               axisLine={false}
-              tickFormatter={(tick) => `${tick}%`} // Format Y-axis ticks as percentage
             />
 
             {/* Floor 1 Line */}
@@ -141,9 +104,7 @@ export default function RestRoomsActivity() {
               onMouseLeave={handleLineLeave}
             />
 
-            {/* Custom Tooltip */}
-            <Tooltip content={<CustomTooltip />} />
-
+            <Tooltip />
             <Legend
               content={({ payload }) => (
                 <ul className="flex gap-4 text-sm font-medium text-gray-600">
