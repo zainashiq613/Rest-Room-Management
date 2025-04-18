@@ -110,6 +110,12 @@ export default function Buildingperformance() {
           <Line dataKey="value" stroke="#A449EB" />
         </ComposedChart>
       </ResponsiveContainer>
+      <div className="flex justify-between items-center mt-2">
+        <p className="text-[14px] text-[#767676]">
+          Your performance is 30% better<br></br> compare to last month
+        </p>
+        <span className="text-[24px] text-[#2E2E30] font-bold">30%</span>
+      </div>
     </div>
   );
 }

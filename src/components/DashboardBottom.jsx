@@ -6,6 +6,8 @@ import TopBuildings from "./TopBuildings";
 import UserEngagement from "./UserEngagement";
 import MostUsed from "./MostUsed";
 import RestRoomsActivity from "./RestRoomsActivity";
+import RestroomsPerformance from "./RestroomsPerformance";
+import ActiveSensors from "./ActiveSensors";
 
 export default function DashboardBottom() {
   return (
@@ -17,6 +19,8 @@ export default function DashboardBottom() {
       </div>
       <div className="flex items-center justify-between">
         <UserEngagement />
+        <RestroomsPerformance />
+        <ActiveSensors />
       </div>
       <div className="mt-5 flex justify-between items-center gap-5">
         <RestRoomsActivity />
