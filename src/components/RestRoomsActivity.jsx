@@ -55,7 +55,7 @@ export default function RestRoomsActivity() {
         </div>
       </div>
       <div className="w-full h-55">
-        <ResponsiveContainer width={650} height={240}>
+        <ResponsiveContainer width="100%" height={240}>
           <LineChart data={data}>
             <XAxis
               interval={0}
@@ -128,7 +128,7 @@ export default function RestRoomsActivity() {
                 width: 230,
                 position: "absolute",
                 top: "-20%",
-                right: 130,
+                right: "21%",
               }}
               verticalAlign="top"
               align="right"
