@@ -5,6 +5,7 @@ import Buildingperformance from "./Buildingperformance";
 import TopBuildings from "./TopBuildings";
 import UserEngagement from "./UserEngagement";
 import MostUsed from "./MostUsed";
+import RestRoomsActivity from "./RestRoomsActivity";
 
 export default function DashboardBottom() {
   return (
@@ -18,6 +19,7 @@ export default function DashboardBottom() {
         <UserEngagement />
       </div>
       <div>
+        <RestRoomsActivity />
         <MostUsed />
       </div>
       <AllBuildings />
