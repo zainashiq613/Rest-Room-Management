@@ -18,7 +18,7 @@ export default function DashboardBottom() {
       <div>
         <UserEngagement />
       </div>
-      <div>
+      <div className="mt-5 flex justify-between items-center gap-5">
         <RestRoomsActivity />
         <MostUsed />
       </div>

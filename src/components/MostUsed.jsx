@@ -4,7 +4,7 @@ import UsedItem from "./UsedItem";
 
 export default function MostUsed() {
   return (
-    <div className="bg-white my-5 p-6 rounded-xl shadow-lg">
+    <div className="basis-[37%] bg-white p-6 rounded-xl shadow-lg">
       <h1 className="flex items-center gap-3 text-[20px] font-semibold ">
         <img src={used} />
         Most Used Restrooms

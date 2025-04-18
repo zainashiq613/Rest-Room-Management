@@ -39,7 +39,7 @@ export default function RestRoomsActivity() {
   };
 
   return (
-    <div className="bg-white mt-5 rounded-xl shadow-lg p-6">
+    <div className="basis-[68%] bg-white h-87 rounded-xl shadow-lg p-6">
       <div className="flex justify-between items-center">
         <div>
           <a href="#" className="flex items-center text-[#A449EB] text-[14px]">
@@ -54,10 +54,12 @@ export default function RestRoomsActivity() {
           </span>
         </div>
       </div>
-      <div className="w-full h-75">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="w-full h-55">
+        <ResponsiveContainer width={600} height={240}>
           <LineChart data={data}>
             <XAxis
+              interval={0}
+              fontSize={11}
               dataKey="day"
               tickMargin={14}
               tickLine={false}
@@ -125,8 +127,8 @@ export default function RestRoomsActivity() {
               wrapperStyle={{
                 width: 230,
                 position: "absolute",
-                top: "-17%",
-                right: 150,
+                top: "-20%",
+                right: 120,
               }}
               verticalAlign="top"
               align="right"
