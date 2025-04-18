@@ -1,9 +1,9 @@
 import React from "react";
 import BottomInfoItem from "./BottomInfoItem";
-import infobuildingicon from "./info-building-Icon.png";
-import inforestroomicon from "./info-rest-room-icon.png";
-import infosensoricon from "./info-sensor-icon.png";
-import infosubscriptionicon from "./info-subscription-icon.png";
+import infobuildingicon from "./images/info-building-Icon.png";
+import inforestroomicon from "./images/info-rest-room-icon.png";
+import infosensoricon from "./images/info-sensor-icon.png";
+import infosubscriptionicon from "./images/info-subscription-icon.png";
 
 export default function BottomInfo() {
   return (

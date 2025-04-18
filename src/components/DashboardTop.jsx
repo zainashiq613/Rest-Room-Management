@@ -1,8 +1,8 @@
 import React from "react";
-import backgroundImage from "./bg.png";
-import nottification from "./Notifications.png";
-import profilePic from "./profile-pic.png";
-import shape from "./Shape.png";
+import backgroundImage from "./images/bg.png";
+import nottification from "./images/Notifications.png";
+import profilePic from "./images/profile-pic.png";
+import shape from "./images/Shape.png";
 
 export default function DashboardTop() {
   return (

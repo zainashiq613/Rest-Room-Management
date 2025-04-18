@@ -1,6 +1,6 @@
 import React from "react";
-import usedgraph from "./usedgraph.png";
-import down from "./down.png";
+import usedgraph from "./images/usedgraph.png";
+import down from "./images/down.png";
 
 export default function UsedItem({ room, floor }) {
   return (

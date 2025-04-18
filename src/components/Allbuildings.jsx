@@ -1,8 +1,8 @@
 import React from "react";
 import BuildingItem from "./BuildingItem";
-import buildingitem_1 from "./building-item-1.png";
-import buildingitem_2 from "./building-item-2.png";
-import buildingitem_3 from "./building-item-3.png";
+import buildingitem_1 from "./images/building-item-1.png";
+import buildingitem_2 from "./images/building-item-2.png";
+import buildingitem_3 from "./images/building-item-3.png";
 
 export default function Allbuildings() {
   return (

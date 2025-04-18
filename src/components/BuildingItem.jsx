@@ -1,6 +1,6 @@
 import React from "react";
-import locationimg from "./location.png";
-import dots from "./dots.png";
+import locationimg from "./images/location.png";
+import dots from "./images/dots.png";
 
 export default function BuildingItem({
   address,

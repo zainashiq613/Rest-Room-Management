@@ -1,8 +1,8 @@
 // src/components/TopBuildings.jsx
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
-import buildingicon from "./buildingicon.png";
-import vector from "./Vector.png";
+import buildingicon from "./images/buildingicon.png";
+import vector from "./images/Vector.png";
 
 const data = [
   { name: "Building 1", value: 70, color: "#8B5CF6" },

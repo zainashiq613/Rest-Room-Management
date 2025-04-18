@@ -8,8 +8,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import up from "./up.png";
-import dropdown from "./drop-down.png";
+import up from "./images/up.png";
+import dropdown from "./images/drop-down.png";
 
 const data = [
   {

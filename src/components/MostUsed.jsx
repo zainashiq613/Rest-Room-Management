@@ -1,5 +1,5 @@
 import React from "react";
-import used from "./used.png";
+import used from "./images/used.png";
 import UsedItem from "./UsedItem";
 
 export default function MostUsed() {

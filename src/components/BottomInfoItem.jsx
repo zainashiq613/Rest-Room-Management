@@ -1,5 +1,5 @@
 import React from "react";
-import up from "./up.png";
+import up from "./images/up.png";
 
 export default function BottomInfoItem({ title, value, desc, icon }) {
   return (

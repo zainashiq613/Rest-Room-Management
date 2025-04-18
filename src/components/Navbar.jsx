@@ -1,10 +1,10 @@
 import React from "react";
-import dummyLogo from "./dummy logo.png";
-import dashboard from "./dashboard.png";
-import sensor from "./sensor.png";
-import building from "./building.png";
-import settings from "./setting.png";
-import logout from "./logout.png";
+import dummyLogo from "./images/dummy logo.png";
+import dashboard from "./images/dashboard.png";
+import sensor from "./images/sensor.png";
+import building from "./images/building.png";
+import settings from "./images/setting.png";
+import logout from "./images/logout.png";
 
 export default function Navbar() {
   return (

@@ -15,7 +15,7 @@ export default function DashboardBottom() {
         <Buildingperformance />
         <TopBuildings />
       </div>
-      <div>
+      <div className="flex items-center justify-between">
         <UserEngagement />
       </div>
       <div className="mt-5 flex justify-between items-center gap-5">
