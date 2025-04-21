@@ -77,35 +77,6 @@ const data = [
     date: "2024-07-10",
   },
 ];
-
-const renderTooltipContent = ({ payload }) => {
-  if (!payload || payload.length === 0) return null;
-
-  const entry = payload[0];
-  const total = payload.reduce((result, e) => result + e.value, 0);
-
-  // Format date like "15 July 2024"
-  const formattedDate = new Date(entry.payload.date).toLocaleDateString(
-    "en-GB",
-    {
-      weekday: "long",
-      month: "long",
-      year: "numeric",
-    }
-  );
-
-  return (
-    <div div className="bg-white flex items-center p-3 rounded-md">
-      <img src={smile} />
-      <div>
-        <p className="flex gap-2 items-center text-[20px] text-[#A449EB]">
-          {`${total}`}
-        </p>
-        <p className="text-sm text-gray-500 mb-1">{formattedDate}</p>
-      </div>
-    </div>
-  );
-};
 export default function Buildingperformance() {
   return (
     <div className="basis-[32%] bg-white shadow-lg mt-5 rounded-xl py-3 px-4">
@@ -137,7 +108,7 @@ export default function Buildingperformance() {
             tickLine={false}
             tickCount={7}
           />
-          <Tooltip content={renderTooltipContent} />
+          <Tooltip content={renderTooltip} />
           <Line
             dot={false}
             strokeWidth={2}
@@ -155,4 +126,50 @@ export default function Buildingperformance() {
       </div>
     </div>
   );
+}
+
+const formatDateWithSuffix = (rawDate) => {
+  const date = new Date(rawDate);
+
+  const day = date.getDate();
+  const weekday = date.toLocaleDateString("en-US", { weekday: "long" });
+  const month = date.toLocaleDateString("en-US", { month: "long" });
+
+  const getSuffix = (d) => {
+    if (d > 3 && d < 21) return "th";
+    switch (d % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  return `${weekday}, ${month} ${day}${getSuffix(day)}`;
+};
+
+function renderTooltip({ active, payload }) {
+  if (active) {
+    const fullData = payload[0].payload;
+    const date = fullData.date;
+    const formattedDate = formatDateWithSuffix(date);
+
+    return (
+      <div className="bg-white flex gap-2 items-center py-3 px-5 rounded-xl">
+        <p>
+          <img src={smile} />
+        </p>
+        <div>
+          <p className="text-[18px] font-bold text-[#767676]">
+            {fullData.value}
+          </p>
+          <p className="text-[14px] text-[#767676]">{formattedDate}</p>
+        </div>
+      </div>
+    );
+  }
 }

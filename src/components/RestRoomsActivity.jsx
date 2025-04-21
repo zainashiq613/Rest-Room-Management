@@ -106,36 +106,34 @@ export default function RestRoomsActivity() {
               onMouseLeave={handleLineLeave}
             />
 
-            <Tooltip />
-            <Legend
-              content={({ payload }) => (
-                <ul className="flex gap-4 text-sm font-medium text-gray-600">
-                  {payload.map((entry, index) => (
-                    <li
-                      key={`item-${index}`}
-                      className="flex items-center gap-2"
-                    >
-                      <span
-                        className="inline-block w-3.5 h-3 rounded-md"
-                        style={{ backgroundColor: entry.color }}
-                      />
-                      {entry.value.replace("floor", "Floor ")}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              wrapperStyle={{
-                width: 230,
-                position: "absolute",
-                top: "-20%",
-                right: "21%",
+            <Tooltip
+              cursor={{
+                stroke: "#A449EB",
+                strokeWidth: 2,
               }}
-              verticalAlign="top"
-              align="right"
+              content={renderTooltip}
             />
+            <Legend />
           </LineChart>
         </ResponsiveContainer>
       </div>
     </div>
   );
 }
+
+const renderTooltip = ({ active, payload, label }) => {
+  if (active) {
+    const fullData = payload[0].payload;
+
+    return (
+      <div className="bg-white py-3 px-4 rounded-xl shadow">
+        <p>{label}</p>
+        <p className="flex items-center gap-1 text-[20px] font-bold text-[#A449EB]">
+          {fullData.value}%
+        </p>
+      </div>
+    );
+  }
+
+  return null;
+};

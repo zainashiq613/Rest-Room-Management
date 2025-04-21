@@ -8,8 +8,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import up from "./images/up.png";
 import dropdown from "./images/drop-down.png";
+import up from "./images/up.png";
 
 const data = [
   {
@@ -163,34 +163,6 @@ const data = [
     date: "2024-07-30",
   },
 ];
-
-const toPercent = (decimal) => `${decimal * 1}%`;
-
-const renderTooltipContent = ({ payload }) => {
-  if (!payload || payload.length === 0) return null;
-
-  const entry = payload[0];
-  const total = payload.reduce((result, e) => result + e.value, 0);
-
-  // Format date like "15 July 2024"
-  const formattedDate = new Date(entry.payload.date).toLocaleDateString(
-    "en-GB",
-    {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    }
-  );
-
-  return (
-    <div className="bg-white p-3 rounded-md">
-      <p className="text-sm text-gray-500 mb-1">{formattedDate}</p>
-      <p className="flex gap-2 items-center text-[20px] text-[#A449EB]">
-        {`${total}%`} <img src={up} />
-      </p>
-    </div>
-  );
-};
 export default function Buildingperformance() {
   return (
     <div className="basis-[80%] bg-white shadow-lg rounded-xl h-87 py-3 px-4">
@@ -203,7 +175,6 @@ export default function Buildingperformance() {
       <ResponsiveContainer className="ml-[-20px]" width="104%" height={280}>
         <AreaChart
           data={data}
-          stackOffset="expand"
           margin={{
             top: 10,
             right: 30,
@@ -223,17 +194,41 @@ export default function Buildingperformance() {
             axisLine={false}
             tickLine={false}
             tickCount={6}
-            tickFormatter={toPercent}
+            tickFormatter={(value) => `${value}%`}
           />
-          <Tooltip content={renderTooltipContent} />
+          <Tooltip content={renderTooltip} />
           <Area
             type="monotone"
             dataKey="value"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#9787FF"
+            fill="#9787FF"
           />
         </AreaChart>
       </ResponsiveContainer>
     </div>
   );
 }
+
+const renderTooltip = ({ active, payload }) => {
+  if (active) {
+    const fullData = payload[0].payload;
+
+    const date = fullData.date;
+    const formattedDate = new Date(date).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+
+    return (
+      <div className="bg-white py-3 px-4 rounded-xl shadow">
+        <p className="text-sm text-gray-500 mb-1">{formattedDate}</p>
+        <p className="flex items-center gap-1 text-[20px] font-bold text-[#A449EB]">
+          {fullData.value}% <img src={up} alt="up" />
+        </p>
+      </div>
+    );
+  }
+
+  return null;
+};
