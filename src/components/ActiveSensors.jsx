@@ -9,9 +9,9 @@ import {
 const data = [
   {
     name: "Queuing",
-    uv: 39,
+    uv: 31.47,
     pv: 2400,
-    fill: "#FF5248",
+    fill: "#0088FE",
   },
   {
     name: "Flow Count",
@@ -27,9 +27,11 @@ const data = [
   },
   {
     name: "Toilet Paper",
+    fill: "#82ca9d",
   },
   {
     name: "Water Leakage",
+    fill: "#a4de6c",
   },
 ];
 export default function ActiveSensors() {
@@ -41,13 +43,8 @@ export default function ActiveSensors() {
           ActiveSensors
         </h1>
       </div>
-      <ResponsiveContainer height={280} className="border">
-        <RadialBarChart
-          innerRadius={"50%"}
-          outerRadius={"80%"}
-          barSize={12}
-          data={data}
-        >
+      <ResponsiveContainer className="border">
+        <RadialBarChart barSize={10} data={data}>
           <RadialBar
             minAngle={15}
             label={{ position: "insideStart", fill: "#fff" }}
