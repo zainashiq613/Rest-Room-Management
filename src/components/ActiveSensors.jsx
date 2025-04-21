@@ -9,9 +9,9 @@ import {
 const data = [
   {
     name: "Queuing",
-    uv: 31.47,
+    uv: 39,
     pv: 2400,
-    fill: "#0088FE",
+    fill: "#FF5248",
   },
   {
     name: "Flow Count",
@@ -27,27 +27,25 @@ const data = [
   },
   {
     name: "Toilet Paper",
-    fill: "#82ca9d",
   },
   {
     name: "Water Leakage",
-    fill: "#a4de6c",
   },
 ];
 export default function ActiveSensors() {
   return (
     <div className="basis-[32%] h-94 bg-white rounded-xl shadow-lg py-3 px-4">
-      <h1 className="flex items-center gap-2 text-[20px] font-bold">
-        <img src={active} />
-        ActiveSensors
-      </h1>
-      <ResponsiveContainer width="100%" height="100%">
+      <div>
+        <h1 className="flex items-center gap-2 text-[20px] font-bold">
+          <img src={active} />
+          ActiveSensors
+        </h1>
+      </div>
+      <ResponsiveContainer height={280} className="border">
         <RadialBarChart
-          cx="50%"
-          cy="50%"
-          innerRadius="10%"
-          outerRadius="80%"
-          barSize={10}
+          innerRadius={"50%"}
+          outerRadius={"80%"}
+          barSize={12}
           data={data}
         >
           <RadialBar
@@ -57,7 +55,7 @@ export default function ActiveSensors() {
             clockWise
             dataKey="uv"
           />
-          <Legend iconSize={10} iconType="circle" />
+          {/* <Legend iconSize={10} fontSize={10} iconType="circle" /> */}
         </RadialBarChart>
       </ResponsiveContainer>
     </div>
