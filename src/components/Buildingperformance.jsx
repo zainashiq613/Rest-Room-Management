@@ -196,12 +196,23 @@ export default function Buildingperformance() {
             tickCount={6}
             tickFormatter={(value) => `${value}%`}
           />
-          <Tooltip content={renderTooltip} />
+          <Tooltip
+            cursor={{
+              stroke: "#F64E60",
+              strokeWidth: 1,
+              strokeDasharray: "2",
+            }}
+            content={renderTooltip}
+          />
           <Area
             type="monotone"
             dataKey="value"
             stroke="#9787FF"
             fill="#9787FF"
+            activeDot={{
+              r: 5,
+              fill: "#F64E60",
+            }}
           />
         </AreaChart>
       </ResponsiveContainer>

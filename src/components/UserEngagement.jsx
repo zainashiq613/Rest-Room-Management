@@ -57,7 +57,7 @@ export default function Buildingperformance() {
   return (
     <div className="basis-[32%] h-fit mt-5 bg-white shadow-lg rounded-xl py-3 px-4">
       <div className="flex justify-between items-center mb-5">
-        <h1 className="text-[20px] font-bold"> Buildings Performance </h1>
+        <h1 className="text-[20px] font-bold">User’s Engagement</h1>
       </div>
       <ResponsiveContainer width="102%" height={280}>
         <ComposedChart

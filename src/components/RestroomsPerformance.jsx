@@ -94,7 +94,7 @@ export default function Buildingperformance() {
             bottom: 0,
           }}
         >
-          <CartesianGrid opacity={0.4} />
+          <CartesianGrid opacity={0.4} vertical={false} />
           <XAxis
             dataKey="day"
             fontSize={10}

@@ -12,19 +12,19 @@ import {
 } from "recharts";
 
 const data = [
-  { day: "5 May", floor1: 23, floor2: 20, floor3: 12 },
+  { day: "5 May", floor1: 45, floor2: 49, floor3: 12 },
   { day: "6 May", floor1: 23, floor2: 20, floor3: 23 },
   { day: "7 May", floor1: 50, floor2: 20, floor3: 23 },
-  { day: "8 May", floor1: 23, floor2: 20, floor3: 34 },
-  { day: "9 May", floor1: 23, floor2: 20, floor3: 12 },
-  { day: "10 May", floor1: 23, floor2: 20, floor3: 23 },
-  { day: "11 May", floor1: 45, floor2: 20, floor3: 12 },
-  { day: "12 May", floor1: 23, floor2: 20, floor3: 35 },
-  { day: "13 May", floor1: 23, floor2: 20, floor3: 34 },
-  { day: "14 May", floor1: 23, floor2: 20, floor3: 48 },
-  { day: "15 May", floor1: 23, floor2: 20, floor3: 28 },
-  { day: "16 May", floor1: 23, floor2: 20, floor3: 49 },
-  { day: "17 May", floor1: 23, floor2: 20, floor3: 36 },
+  { day: "8 May", floor1: 18, floor2: 20, floor3: 34 },
+  { day: "9 May", floor1: 41, floor2: 20, floor3: 12 },
+  { day: "10 May", floor1: 33, floor2: 20, floor3: 23 },
+  { day: "11 May", floor1: 26, floor2: 20, floor3: 12 },
+  { day: "12 May", floor1: 29, floor2: 20, floor3: 35 },
+  { day: "13 May", floor1: 49, floor2: 20, floor3: 34 },
+  { day: "14 May", floor1: 9, floor2: 20, floor3: 48 },
+  { day: "15 May", floor1: 15, floor2: 20, floor3: 28 },
+  { day: "16 May", floor1: 21, floor2: 20, floor3: 49 },
+  { day: "17 May", floor1: 34, floor2: 20, floor3: 36 },
 ];
 
 export default function RestRoomsActivity() {
@@ -54,8 +54,8 @@ export default function RestRoomsActivity() {
           </span>
         </div>
       </div>
-      <div className="w-full h-55">
-        <ResponsiveContainer width="100%" height={240}>
+      <div className="w-full">
+        <ResponsiveContainer width="100%" height={250}>
           <LineChart data={data}>
             <XAxis
               interval={0}
@@ -106,14 +106,18 @@ export default function RestRoomsActivity() {
               onMouseLeave={handleLineLeave}
             />
 
-            <Tooltip
-              cursor={{
-                stroke: "#A449EB",
-                strokeWidth: 2,
+            <Tooltip content={renderTooltip} />
+            <Legend
+              verticalAlign="top"
+              height={32}
+              iconType="square"
+              align="center"
+              wrapperStyle={{
+                position: "absolute",
+                top: "-19%",
+                right: "-11%",
               }}
-              content={renderTooltip}
             />
-            <Legend />
           </LineChart>
         </ResponsiveContainer>
       </div>
@@ -121,15 +125,16 @@ export default function RestRoomsActivity() {
   );
 }
 
-const renderTooltip = ({ active, payload, label }) => {
+const renderTooltip = ({ active, payload }) => {
   if (active) {
-    const fullData = payload[0].payload;
+    const value = payload[0].value;
+    const label = payload[0].dataKey;
 
     return (
       <div className="bg-white py-3 px-4 rounded-xl shadow">
-        <p>{label}</p>
-        <p className="flex items-center gap-1 text-[20px] font-bold text-[#A449EB]">
-          {fullData.value}%
+        <p className="text-[#7C8DB5]">{label}</p>
+        <p className="flex items-center gap-1 text-[16px] font-bold">
+          {value}% In Use
         </p>
       </div>
     );
