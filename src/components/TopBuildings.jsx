@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
 import building from "./images/buildingicon.png";
-import vector from "./images/vector.png";
+import vector from "./images/Vector.png";
 
 const data = [
   { name: "Building 1", value: 70 },
