@@ -79,8 +79,8 @@ export default function Buildingperformance() {
             tickCount={7}
           />
           <Tooltip content={renderTooltip} />
-          <Bar dataKey="value" fill="#E9ECF1" />
-          <Line dataKey="value" stroke="#A449EB" />
+          <Bar dataKey="value" fill="#E9ECF1" activeBar={{ fill: "#A449EB" }} />
+          <Line dot={{ fill: "#fff" }} dataKey="value" stroke="#A449EB" />
         </ComposedChart>
       </ResponsiveContainer>
       <div className="flex justify-between items-center mt-2">
