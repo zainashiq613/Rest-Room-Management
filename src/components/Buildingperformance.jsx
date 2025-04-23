@@ -172,7 +172,7 @@ export default function Buildingperformance() {
           This Month <img src={dropdown} />
         </span>
       </div>
-      <ResponsiveContainer className="ml-[-20px]" width="104%" height={280}>
+      <ResponsiveContainer className="ml-[-20px]" width="100%" height={280}>
         <AreaChart
           data={data}
           margin={{

@@ -7,7 +7,7 @@ import shape from "./images/Shape.png";
 export default function DashboardTop() {
   return (
     <div
-      className="flex w-[80vw] h-65 py-12 px-10 col-span-[80vw] justify-between items-start bg-no-repeat"
+      className="flex w-full h-65 py-12 px-10 justify-between items-start bg-no-repeat"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <h1 className="text-white text-2xl font-bold self-end">Dashboard</h1>

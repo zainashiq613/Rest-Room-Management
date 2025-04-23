@@ -4,7 +4,7 @@ import DashboardBottom from "./DashboardBottom";
 
 export default function Dashboard() {
   return (
-    <div className="bg-[#F5F2FF] basis-[70%]">
+    <div className="bg-[#F5F2FF] basis-[80%]">
       <DashboardTop />
       <DashboardBottom />
     </div>

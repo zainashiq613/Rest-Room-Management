@@ -14,7 +14,7 @@ export default function Navbar() {
         <h2 className="text-[24px] text-white">Rest Room Management</h2>
       </div>
       <div className="flex flex-col justify-between h-388 mt-100">
-        <div className="sticky flex flex-col justify-between">
+        <div className="flex flex-col justify-between">
           <a
             href="#"
             className="flex items-center gap-3 bg-[#F5F2FF] mb-2 rounded-xl py-3 px-10"

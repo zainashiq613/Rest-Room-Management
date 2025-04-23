@@ -6,7 +6,7 @@ import buildingitem_3 from "./images/building-item-3.png";
 
 export default function Allbuildings() {
   return (
-    <div className="bg-white border border-[#63636321] px-3 py-6 mt-5 rounded-xl">
+    <div className="bg-white border border-[#63636321] px-3 py-6 mt-5 rounded-xl shadow-xl">
       <div className="flex justify-between">
         <h1 className="text-[#05004E] font-bold text-[20px]">All Buildings</h1>
         <a href="#" className="text-[#05004E99]">

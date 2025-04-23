@@ -83,7 +83,7 @@ export default function Buildingperformance() {
       <div className="flex justify-between items-center mb-3">
         <h1 className="text-[20px] font-bold">Restrooms Performance</h1>
       </div>
-      <ResponsiveContainer width="106%" height={280}>
+      <ResponsiveContainer width="100%" height={280}>
         <LineChart
           data={data}
           stackOffset="expand"

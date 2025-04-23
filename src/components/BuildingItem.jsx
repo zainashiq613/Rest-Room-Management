@@ -12,7 +12,7 @@ export default function BuildingItem({
   return (
     <div className="basis-[33%] h-84 mt-4">
       <div>
-        <img src={src} className="rounded-3xl" />
+        <img src={src} className="rounded-3xl w-[100%]" />
         <a href="#">
           <img src={dots} className="relative" />
         </a>
@@ -33,7 +33,7 @@ export default function BuildingItem({
             Commercial
           </a>
         </div>
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex w-full justify-between items-center mt-4">
           <div className="text-center basis-[47%] bg-[#E8E2FF] p-4 rounded-xl">
             <h1 className="font-bold text-[#A449EB] text-[24px]">
               {floorsvalue}
