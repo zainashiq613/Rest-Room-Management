@@ -3,7 +3,7 @@ import up from "./images/up.png";
 
 export default function BottomInfoItem({ title, value, desc, icon }) {
   return (
-    <div className="basis-[24%] bg-white rounded-xl shadow-lg py-6 px-6">
+    <div className="basis-[24%] bg-white rounded-lg shadow-lg py-6 px-6">
       <div className="flex  justify-between">
         <div>
           <p className="text-[16px] font-medium text-[#202224] mb-3">{title}</p>
