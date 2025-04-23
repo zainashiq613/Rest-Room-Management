@@ -21,14 +21,14 @@ export default function BottomInfo() {
         desc={"8.5% Up from yesterday"}
       />
       <BottomInfoItem
-        title={"Total Buildings"}
+        title={"Total Sensors"}
         value={350}
         icon={infosensoricon}
         desc={"8.5% Up from yesterday"}
       />
       <BottomInfoItem
-        title={"Total Buildings"}
-        value={125}
+        title={"Total Subscriptions"}
+        value={50}
         icon={infosubscriptionicon}
         desc={"8.5% Up from yesterday"}
       />

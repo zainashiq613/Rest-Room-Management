@@ -21,7 +21,7 @@ export default function Navbar() {
             href="#"
             className="flex text-[#A449EB] text-[20px] font-semibold items-center gap-3 bg-[#F5F2FF] mb-2 rounded-xl py-3 px-10"
           >
-            <img className="" src={dashboard} />
+            <img src={dashboard} />
             Dashboard
           </a>
           <a
