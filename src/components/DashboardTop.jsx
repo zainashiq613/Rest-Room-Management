@@ -11,15 +11,15 @@ export default function DashboardTop() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <h1 className="text-white text-2xl font-bold self-end">Dashboard</h1>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         <img src={nottification} />
         <img src={profilePic} />
-        <div className="flex items-center gap-2">
-          <div>
-            <h3>MKS</h3>
-            <p>Admin</p>
+        <div>
+          <div className="flex items-center gap-2">
+            <h3 className="text-white text-[14px]">MKS</h3>
+            <img src={shape} />
           </div>
-          <img src={shape} />
+          <p className="text-[#FFFFFF99]">Admin</p>
         </div>
       </div>
     </div>
