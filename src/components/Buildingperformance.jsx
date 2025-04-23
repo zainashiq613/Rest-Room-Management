@@ -14,27 +14,27 @@ import up from "./images/up.png";
 const data = [
   {
     day: "1",
-    value: 20,
+    value: 0,
     date: "2024-07-01",
   },
   {
     day: "2",
-    value: 2,
+    value: 15,
     date: "2024-07-02",
   },
   {
     day: "3",
-    value: 45,
+    value: 12,
     date: "2024-07-03",
   },
   {
     day: "4",
-    value: 43,
+    value: 23,
     date: "2024-07-04",
   },
   {
     day: "5",
-    value: 23,
+    value: 24,
     date: "2024-07-05",
   },
   {
@@ -49,57 +49,57 @@ const data = [
   },
   {
     day: "8",
-    value: 39,
+    value: 37,
     date: "2024-07-08",
   },
   {
     day: "9",
-    value: 14,
+    value: 36,
     date: "2024-07-09",
   },
   {
     day: "10",
-    value: 46,
+    value: 42,
     date: "2024-07-10",
   },
   {
     day: "11",
-    value: 20,
+    value: 38,
     date: "2024-07-11",
   },
   {
     day: "12",
-    value: 2,
+    value: 22,
     date: "2024-07-12",
   },
   {
     day: "13",
-    value: 45,
+    value: 40,
     date: "2024-07-13",
   },
   {
     day: "14",
-    value: 43,
+    value: 23,
     date: "2024-07-14",
   },
   {
     day: "15",
-    value: 23,
+    value: 40,
     date: "2024-07-15",
   },
   {
     day: "16",
-    value: 24,
+    value: 45,
     date: "2024-07-16",
   },
   {
     day: "17",
-    value: 29,
+    value: 27,
     date: "2024-07-17",
   },
   {
     day: "18",
-    value: 39,
+    value: 32,
     date: "2024-07-18",
   },
   {
