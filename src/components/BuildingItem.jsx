@@ -14,7 +14,7 @@ export default function BuildingItem({
       <div>
         <img src={src} className="rounded-3xl w-[100%]" />
         <a href="#">
-          <img src={dots} className="relative" />
+          <img src={dots} className="relative top-[-176px] z-10 left-[83%]" />
         </a>
       </div>
       <div className="bg-[#F7F7F7] py-4 px-3 relative bottom-20 rounded-t-3xl">
