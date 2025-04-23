@@ -21,26 +21,26 @@ export default function Navbar() {
             href="#"
             className="flex text-[#A449EB] text-[20px] font-semibold items-center gap-3 bg-[#F5F2FF] mb-2 rounded-xl py-3 px-10"
           >
-            <img src={dashboard} />
+            <img className="" src={dashboard} />
             Dashboard
           </a>
           <a
             href="#"
-            className="flex items-center gap-3 mb-2 rounded-xl py-4 px-8"
+            className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-3 px-10"
           >
             <img src={building} />
             Buildings
           </a>
           <a
             href="#"
-            className="flex items-center gap-3 mb-2 rounded-xl py-4 px-8"
+            className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-3 px-10"
           >
             <img src={sensor} />
             Sensors
           </a>
           <a
             href="#"
-            className="flex items-center gap-3 mb-2 rounded-xl py-4 px-8"
+            className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-3 px-10"
           >
             <img src={settings} />
             Settings
