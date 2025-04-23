@@ -7,7 +7,7 @@ export default function BottomInfoItem({ title, value, desc, icon }) {
       <div className="flex  justify-between">
         <div>
           <p className="text-[16px] font-medium text-[#202224] mb-3">{title}</p>
-          <h1 className="text-[24px] font-semibold text-[#202224] font-bold mb-2">
+          <h1 className="text-[24px] font-semibold text-[#202224] mb-2">
             {value}
           </h1>
         </div>
