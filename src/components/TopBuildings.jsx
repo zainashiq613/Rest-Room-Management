@@ -62,6 +62,8 @@ function customLegend() {
     </div>
   );
 }
+
+// Custom label function
 const renderCustomizedLabel = ({
   cx,
   cy,
@@ -72,7 +74,7 @@ const renderCustomizedLabel = ({
 }) => {
   const RADIAN = Math.PI / 180;
   const radius = innerRadius + (outerRadius - innerRadius) / 2;
-  const x = 2 + cx + radius * Math.cos(midAngle * RADIAN);
+  const x = 2 + cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
   return (
