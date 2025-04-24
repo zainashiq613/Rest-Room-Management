@@ -33,7 +33,7 @@ export default function ActiveSensors() {
           ActiveSensors
         </h1>
       </div>
-      <div className="relative top-[36%] w-fit left-[44%] flex items-center gap-2">
+      <div className="relative top-[36%] w-fit left-[46.5%] flex items-center gap-2">
         <h1 className="text-[24px] font-bold">99%</h1>
       </div>
       <ResponsiveContainer className="" height={310}>

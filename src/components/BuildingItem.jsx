@@ -13,10 +13,10 @@ export default function BuildingItem({
     <div className="basis-[33%] h-128 mt-4">
       <div>
         <img src={src} className="rounded-3xl w-[100%]" />
-        <a href="#">
-          <img src={dots} className="relative top-[-356px] z-10 left-[91%]" />
-        </a>
       </div>
+      <a href="#">
+        <img src={dots} className="relative bottom-[69%] z-10 left-[90%]" />
+      </a>
       <div className="bg-[#F7F7F7] py-4 px-3 relative bottom-20 rounded-t-3xl">
         <div className="flex justify-between">
           <div>
