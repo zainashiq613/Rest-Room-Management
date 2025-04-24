@@ -6,14 +6,16 @@ import buildingitem_3 from "./images/building-item-3.png";
 
 export default function Allbuildings() {
   return (
-    <div className="bg-white border border-[#63636321] px-3 py-6 mt-5 rounded-xl shadow-xl">
+    <div className="bg-white border h-fit border-[#63636321] px-3 py-4 mt-5 rounded-xl shadow-xl xl:h-92">
       <div className="flex justify-between">
-        <h1 className="text-[#05004E] font-bold text-[20px]">All Buildings</h1>
-        <a href="#" className="text-[#05004E99]">
+        <h1 className="text-[#05004E] font-bold text-[18px] xl:text-[24px] mb-5">
+          All Buildings
+        </h1>
+        <a href="#" className="text-[#05004E99] text-[16px] xl:text-[18px]">
           View all
         </a>
       </div>
-      <div className="grid grid-cols-3 grid-rows-1 gap-5">
+      <div className="flex flex-wrap justify-between items-center gap-3">
         <BuildingItem
           address="Ayub street kotlakhpat, Lahore"
           title="Office Building"

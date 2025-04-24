@@ -39,26 +39,30 @@ export default function RestRoomsActivity() {
   };
 
   return (
-    <div className="basis-[68%] bg-white h-87 rounded-xl shadow-lg p-6">
+    <div className="basis-[100%] bg-white h-fit rounded-xl shadow-lg p-4  xl:basis-[72%]">
       <div className="flex justify-between items-center">
         <div>
-          <a href="#" className="flex items-center text-[#A449EB] text-[14px]">
+          <a
+            href="#"
+            className="flex items-center text-[#A449EB] text-[12px] xl:text-[16px]"
+          >
             Building 1 <img src={dropdown} />
           </a>
-          <h1 className="text-[24px] font-semi-bold"> Restrooms Activity </h1>
+          <h1 className="text-[15px] font-semibold mb-4 xl:text-[20px]">
+            Restrooms Activity
+          </h1>
         </div>
         <div>
-          <span className="flex border text-[#A449EB] py-1.5 px-2 rounded-md">
+          <span className="flex border text-[13px] text-[#A449EB] py-0 px-0.5 xl:py-1.5 xl:px-2 items-center rounded-md">
             This Month
             <img src={dropdown} />
           </span>
         </div>
       </div>
       <div className="w-full">
-        <ResponsiveContainer width="100%" height={250}>
+        <ResponsiveContainer width="100%" height={270}>
           <LineChart data={data}>
             <XAxis
-              interval={0}
               fontSize={11}
               dataKey="day"
               tickMargin={14}
@@ -108,14 +112,14 @@ export default function RestRoomsActivity() {
 
             <Tooltip content={renderTooltip} />
             <Legend
-              verticalAlign="top"
+              verticalAlign="bottom"
               height={32}
               iconType="square"
-              align="center"
+              align="bottom"
               wrapperStyle={{
                 position: "absolute",
-                top: "-19%",
-                right: "-11%",
+                right: "-12%",
+                top: "94%",
               }}
             />
           </LineChart>

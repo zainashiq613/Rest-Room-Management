@@ -79,7 +79,7 @@ const data = [
 ];
 export default function Buildingperformance() {
   return (
-    <div className="basis-[32%] bg-white shadow-lg mt-5 rounded-xl py-3 px-4">
+    <div className="basis-[100%] bg-white shadow-lg mt-5 rounded-xl py-3 px-4  xl:basis-[32%]">
       <div className="flex justify-between items-center mb-3">
         <h1 className="text-[20px] font-bold">Restrooms Performance</h1>
       </div>

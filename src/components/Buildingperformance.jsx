@@ -165,14 +165,16 @@ const data = [
 ];
 export default function Buildingperformance() {
   return (
-    <div className="basis-[80%] bg-white shadow-lg rounded-xl h-87 py-3 px-4">
+    <div className="basis-[100%] bg-white shadow-lg rounded-xl h-fit py-3 px-4 sm:py-4 px-5 xl:basis-[70%]">
       <div className="flex justify-between items-center mb-5">
-        <h1 className="text-[20px] font-bold"> Buildings Performance </h1>
-        <span className="flex border py-1.5 px-2 text-[16px] rounded-md text-[#A449EB] items-center">
+        <h1 className="text-[13px] font-semibold sm:text-[22px]">
+          Buildings Performance
+        </h1>
+        <span className="flex border py-0 px-1 sm:py-1.5 px-2 sm:text-[15px] text-[12px] rounded-md text-[#A449EB] items-center">
           This Month <img src={dropdown} />
         </span>
       </div>
-      <ResponsiveContainer className="ml-[-20px]" width="100%" height={280}>
+      <ResponsiveContainer className="sm:ml-[-20px]" width="100%" height={280}>
         <AreaChart
           data={data}
           margin={{

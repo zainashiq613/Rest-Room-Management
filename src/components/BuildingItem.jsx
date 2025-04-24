@@ -1,6 +1,6 @@
 import React from "react";
 import locationimg from "./images/location.png";
-import dots from "./images/dots.png";
+// import dots from "./images/dots.png";
 
 export default function BuildingItem({
   address,
@@ -10,38 +10,37 @@ export default function BuildingItem({
   src,
 }) {
   return (
-    <div className="basis-[33%] h-128 mt-4">
-      <div>
-        <img src={src} className="rounded-3xl w-[100%]" />
+    <div className="basis-[100%] h-fit xl:basis-[32%]">
+      <div className="w-full ">
+        <div>
+          <img src={src} className="rounded-3xl w-[100%]" />
+        </div>
       </div>
-      <a href="#">
-        <img src={dots} className="relative bottom-[69%] z-10 left-[90%]" />
-      </a>
       <div className="bg-[#F7F7F7] py-4 px-3 relative bottom-20 rounded-t-3xl">
         <div className="flex justify-between">
           <div>
-            <p className="flex items-center gap-1.5 text-[12px]">
+            <p className="flex items-center gap-1.5 text-[11px]">
               <img src={locationimg} />
               {address}
             </p>
-            <h1 className="text-[20px] font-bold">{title}</h1>
+            <h1 className="text-[18px] font-semibold">{title}</h1>
           </div>
           <a
             href="#"
-            className="bg-[#078E9B] p-2.5 rounded-xl self-start text-white"
+            className="bg-[#078E9B] p-2 text-[12px] rounded-md self-start text-white"
           >
             Commercial
           </a>
         </div>
         <div className="flex w-full justify-between items-center mt-4">
           <div className="text-center basis-[47%] bg-[#E8E2FF] p-4 rounded-xl">
-            <h1 className="font-bold text-[#A449EB] text-[24px]">
+            <h1 className="font-bold text-[#A449EB] text-[20px]">
               {floorsvalue}
             </h1>
-            <p className="text-[#11111199] text-[13px]">Number Of Floors</p>
+            <p className="text-[#11111199] text-[12px]">Number Of Floors</p>
           </div>
           <div className="text-center basis-[51%] bg-[#E8E2FF] p-4 rounded-xl">
-            <h1 className="font-bold text-[#A449EB] text-[24px]">
+            <h1 className="font-bold text-[#A449EB] text-[20px]">
               {restroomsvalue}
             </h1>
             <p className="text-[#11111199] text-[12px]">Number Of Restrooms</p>

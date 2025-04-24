@@ -26,7 +26,7 @@ const data = [
 ];
 export default function ActiveSensors() {
   return (
-    <div className="basis-[32%] mt-5 h-98 bg-white rounded-xl shadow-lg py-3 px-4">
+    <div className="basis-[100%] mt-5 h-98 bg-white rounded-xl shadow-lg py-3 px-4 xl:basis-[32%]">
       <div>
         <h1 className="flex items-center gap-2 text-[20px] font-bold">
           <img src={active} />
@@ -90,7 +90,9 @@ function customLegend() {
             className="w-3 h-3 rounded-full"
             style={{ backgroundColor: item.fill }}
           ></div>
-          <span className="text-[14px] text-[#030229]">{item.name}</span>
+          <span className="text-[12px] sm:text-[16px] xl:text-[12px] text-[#030229]">
+            {item.name}
+          </span>
         </div>
       ))}
     </div>

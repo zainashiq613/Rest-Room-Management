@@ -6,7 +6,7 @@ export default function SensorPage() {
   return (
     <div className="flex justify-between">
       <Navbar />
-      <div className="w-[80%] relative left-[20%]">
+      <div className="w-[100%] relative">
         <PagesTop title="Sensor" />
       </div>
     </div>

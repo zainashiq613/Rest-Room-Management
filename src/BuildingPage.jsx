@@ -6,7 +6,7 @@ export default function BuildingPage() {
   return (
     <div className="flex justify-between">
       <Navbar />
-      <div className="w-[80%] relative left-[20%]">
+      <div className="w-[100%] relative">
         <PagesTop title="Building" />
       </div>
     </div>

@@ -11,7 +11,7 @@ const data = [
 
 export default function TopBuildings() {
   return (
-    <div className="relative bg-white basis-[30%] h-[344px] rounded-xl py-3 px-4 shadow-lg">
+    <div className="relative bg-white basis-[100%] h-[344px] rounded-xl py-3 px-4 shadow-lg xl:basis-[28%] lg:h-92">
       <h1 className="flex items-center text-[20px] font-bold gap-2">
         <img src={building} alt="building icon" className="w-6 h-6" />
         Top Buildings
@@ -49,14 +49,14 @@ export default function TopBuildings() {
 
 function customLegend() {
   return (
-    <div className="w-[100%] flex justify-center gap-3">
+    <div className="w-[100%] flex justify-evenly gap-2">
       {data.map((item, index) => (
         <div key={index} className="flex items-center gap-1">
           <div
             className="w-3 h-3 rounded-full"
             style={{ backgroundColor: item.color }}
           ></div>
-          <span className="text-[13px]">{item.label}</span>
+          <span className="text-[16px] xl:text-[13px]">{item.label}</span>
         </div>
       ))}
     </div>

@@ -6,8 +6,8 @@ export default function UsedItem({ room, floor }) {
   return (
     <div className="flex justify-between items-center py-4 mt-2 border-b border-[#97979780]">
       <div>
-        <h1 className="font-bold">{room}</h1>
-        <p>{floor}</p>
+        <h1 className="font-bold text-[13px] xl:text-[16px]">{room}</h1>
+        <p className="text-[13px] xl:text-[17px]">{floor}</p>
       </div>
       <div className="self-baseline-last">
         <img src={usedgraph} />
