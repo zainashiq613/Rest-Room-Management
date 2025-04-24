@@ -4,8 +4,12 @@ import dashboard from "./images/dashboard.png";
 import sensor from "./images/sensor.png";
 import building from "./images/building.png";
 import settings from "./images/setting.png";
+import dashboardhover from "./images/dashboard-hover.png";
+import sensorhover from "./images/sensor-hover.png";
+import settingshover from "./images/settings-hover.png";
+import buildinghover from "./images/building-hover.png";
 import logout from "./images/logout.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -18,34 +22,67 @@ export default function Navbar() {
       </div>
       <div className="flex flex-col justify-between h-[80%]">
         <div className="flex flex-col justify-between">
-          <Link
+          <NavLink
             to="/"
-            className="flex text-[#A449EB] text-[20px] font-semibold items-center gap-3 bg-[#F5F2FF] mb-2 rounded-xl py-2 px-10"
+            className={({ isActive }) =>
+              `flex items-center gap-3 mb-2 rounded-xl py-2 px-10 font-semibold text-[20px] ${
+                isActive ? "bg-[#F5F2FF] text-[#A449EB]" : "text-white"
+              }`
+            }
           >
-            <img src={dashboard} />
-            Dashboard
-          </Link>
-          <Link
+            {({ isActive }) => (
+              <>
+                <img src={isActive ? dashboardhover : dashboard} />
+                Dashboard
+              </>
+            )}
+          </NavLink>
+          <NavLink
             to="/building"
-            className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-2 px-10"
+            className={({ isActive }) =>
+              `flex items-center gap-3 mb-2 rounded-xl py-2 px-10 font-semibold text-[20px] ${
+                isActive ? "bg-[#F5F2FF] text-[#A449EB]" : "text-white"
+              }`
+            }
           >
-            <img src={building} />
-            Buildings
-          </Link>
-          <Link
+            {({ isActive }) => (
+              <>
+                <img src={isActive ? buildinghover : building} />
+                Buildings
+              </>
+            )}
+          </NavLink>
+
+          <NavLink
             to="/sensor"
-            className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-2 px-10"
+            className={({ isActive }) =>
+              `flex items-center gap-3 mb-2 rounded-xl py-2 px-10 font-semibold text-[20px] ${
+                isActive ? "bg-[#F5F2FF] text-[#A449EB]" : "text-white"
+              }`
+            }
           >
-            <img src={sensor} />
-            Sensors
-          </Link>
-          <Link
+            {({ isActive }) => (
+              <>
+                <img src={isActive ? sensorhover : sensor} />
+                Sensors
+              </>
+            )}
+          </NavLink>
+          <NavLink
             to="/setting"
-            className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-2 px-10"
+            className={({ isActive }) =>
+              `flex items-center gap-3 mb-2 rounded-xl py-2 px-10 font-semibold text-[20px] ${
+                isActive ? "bg-[#F5F2FF] text-[#A449EB]" : "text-white"
+              }`
+            }
           >
-            <img src={settings} />
-            Settings
-          </Link>
+            {({ isActive }) => (
+              <>
+                <img src={isActive ? settingshover : settings} />
+                Setting
+              </>
+            )}
+          </NavLink>
         </div>
         <div className="bg-[#FAD85D] rounded-xl">
           <a
