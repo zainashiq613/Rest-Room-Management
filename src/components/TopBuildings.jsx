@@ -49,7 +49,7 @@ export default function TopBuildings() {
 
 function customLegend() {
   return (
-    <div className="ml-[-12px] w-[110%] flex gap-3">
+    <div className="ml-[-12px] w-[110%] flex text-center gap-3">
       {data.map((item, index) => (
         <div key={index} className="flex items-center gap-1">
           <div

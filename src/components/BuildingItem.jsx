@@ -10,11 +10,11 @@ export default function BuildingItem({
   src,
 }) {
   return (
-    <div className="basis-[33%] h-84 mt-4">
+    <div className="basis-[33%] h-128 mt-4">
       <div>
         <img src={src} className="rounded-3xl w-[100%]" />
         <a href="#">
-          <img src={dots} className="relative top-[-176px] z-10 left-[83%]" />
+          <img src={dots} className="relative top-[-356px] z-10 left-[91%]" />
         </a>
       </div>
       <div className="bg-[#F7F7F7] py-4 px-3 relative bottom-20 rounded-t-3xl">

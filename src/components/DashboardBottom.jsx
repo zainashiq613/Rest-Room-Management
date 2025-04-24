@@ -11,7 +11,7 @@ import ActiveSensors from "./ActiveSensors";
 
 export default function DashboardBottom() {
   return (
-    <div className="py-7 px-5">
+    <div className="py-7 px-5 h-[70vh] overflow-auto w-[80%] overscroll-y-contain top-[27.2%] fixed">
       <BottomInfo />
       <div className="flex gap-5 justify-between items-center">
         <Buildingperformance />

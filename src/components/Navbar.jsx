@@ -9,14 +9,14 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="flex flex-col p-7 items-center basis-[20%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0]">
+    <div className="flex flex-col p-7 h-[100vh] fixed items-center justify-between w-[20%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0]">
       <div className="flex items-center">
         <img src={dummyLogo} />
-        <h2 className="text-[24px] text-white font-semibold">
+        <h2 className="text-[24px] text-white leading-6 font-semibold">
           Rest Room Management
         </h2>
       </div>
-      <div className="flex flex-col justify-between h-388 mt-100">
+      <div className="flex flex-col justify-between h-[80%]">
         <div className="flex flex-col justify-between">
           <Link
             to="/"

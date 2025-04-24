@@ -6,7 +6,9 @@ export default function SettingPage() {
   return (
     <div className="flex justify-between">
       <Navbar />
-      <PagesTop title="Setting" />
+      <div className="w-[80%] relative left-[20%]">
+        <PagesTop title="Setting" />
+      </div>
     </div>
   );
 }
