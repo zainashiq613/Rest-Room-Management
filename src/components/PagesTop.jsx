@@ -4,13 +4,13 @@ import nottification from "./images/Notifications.png";
 import profilePic from "./images/profile-pic.png";
 import shape from "./images/Shape.png";
 
-export default function DashboardTop() {
+export default function DashboardTop({ title }) {
   return (
     <div
       className="flex w-full h-65 py-12 px-10 justify-between items-start bg-no-repeat"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <h1 className="text-white text-2xl font-bold self-end">Dashboard</h1>
+      <h1 className="text-white text-2xl font-bold self-end">{title}</h1>
       <div className="flex items-center gap-2">
         <img src={nottification} />
         <img src={profilePic} />

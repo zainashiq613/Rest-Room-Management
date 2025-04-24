@@ -5,6 +5,7 @@ import sensor from "./images/sensor.png";
 import building from "./images/building.png";
 import settings from "./images/setting.png";
 import logout from "./images/logout.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -17,34 +18,34 @@ export default function Navbar() {
       </div>
       <div className="flex flex-col justify-between h-388 mt-100">
         <div className="flex flex-col justify-between">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex text-[#A449EB] text-[20px] font-semibold items-center gap-3 bg-[#F5F2FF] mb-2 rounded-xl py-2 px-10"
           >
             <img src={dashboard} />
             Dashboard
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/building"
             className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-2 px-10"
           >
             <img src={building} />
             Buildings
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/sensor"
             className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-2 px-10"
           >
             <img src={sensor} />
             Sensors
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/setting"
             className="flex hover:bg-[#F5F2FF] hover:text-[#A449EB] hover:text-[20px] hover:font-semibold items-center gap-3 mb-2 rounded-xl py-2 px-10"
           >
             <img src={settings} />
             Settings
-          </a>
+          </Link>
         </div>
         <div className="bg-[#FAD85D] rounded-xl">
           <a
