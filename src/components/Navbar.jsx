@@ -13,14 +13,14 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="flex flex-col p-3 h-[100vh] items-center w-[22%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0]">
+    <div className="hidden lg:flex flex-col p-3 h-[100vh] justify-between items-center w-[22%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0]">
       <div className="flex items-center">
         <img src={dummyLogo} />
         <h2 className="text-[24px] text-white leading-6 font-semibold">
           Rest Room Management
         </h2>
       </div>
-      <div className="flex flex-col justify-between mt-42 h-[60%]">
+      <div className="flex flex-col justify-between h-[65%]">
         <div className="flex flex-col justify-between">
           <NavLink
             to="/"
