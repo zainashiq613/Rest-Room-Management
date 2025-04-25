@@ -13,14 +13,17 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="flex flex-col p-3 h-[100vh] justify-between items-center w-[22%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0]">
+    <div className="flex  lg:flex-col p-3 h-[100vh] justify-between items-center basis-[100%] lg:basis-[22%] bg-gradient-to-b from-[#039099] to-[#C51FFFE0]">
       <div className="flex items-center">
         <img src={dummyLogo} />
-        <h2 className="text-[24px] text-white leading-6 font-semibold">
+        <h2 className="text-[22px] xl:text-[24px] text-white leading-6 font-semibold">
           Rest Room Management
         </h2>
       </div>
-      <div className="flex flex-col justify-between h-[60%]">
+      <div
+        id="sidebar"
+        className="lg:flex flex-col relative top-30 justify-between lg:h-[60%]"
+      >
         <div className="flex flex-col justify-between">
           <NavLink
             to="/"
@@ -31,10 +34,10 @@ export default function Navbar() {
             }
           >
             {({ isActive }) => (
-              <>
+              <div className="flex items-center gap-2">
                 <img src={isActive ? dashboardhover : dashboard} />
                 Dashboard
-              </>
+              </div>
             )}
           </NavLink>
           <NavLink
@@ -46,10 +49,10 @@ export default function Navbar() {
             }
           >
             {({ isActive }) => (
-              <>
+              <div className="flex items-center gap-2">
                 <img src={isActive ? buildinghover : building} />
                 Buildings
-              </>
+              </div>
             )}
           </NavLink>
 
@@ -62,10 +65,10 @@ export default function Navbar() {
             }
           >
             {({ isActive }) => (
-              <>
+              <div className="flex items-center gap-2">
                 <img src={isActive ? sensorhover : sensor} />
                 Sensors
-              </>
+              </div>
             )}
           </NavLink>
           <NavLink
@@ -77,10 +80,10 @@ export default function Navbar() {
             }
           >
             {({ isActive }) => (
-              <>
+              <div className="flex items-center gap-2">
                 <img src={isActive ? settingshover : settings} />
                 Setting
-              </>
+              </div>
             )}
           </NavLink>
         </div>
@@ -94,6 +97,13 @@ export default function Navbar() {
           </a>
         </div>
       </div>
+      <div onClick={toggle} id="toggle-btn" className="lg:hidden">
+        <i className="fa-solid fa-bars text-2xl text-white"></i>
+      </div>
     </div>
   );
+}
+
+function toggle() {
+  document.getElementById("sidebar").classList.toggle("hidden");
 }

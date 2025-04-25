@@ -4,7 +4,7 @@ import Dashboard from "./components/Dashboard";
 
 export default function App() {
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col lg:flex-row justify-between">
       <Navbar />
       <Dashboard />
     </div>
