@@ -22,7 +22,7 @@ export default function Navbar() {
       </div>
       <div
         id="sidebar"
-        className="lg:flex flex-col relative top-30 lg:top-0 justify-between lg:h-[60%]"
+        className="hidden lg:flex flex-col relative top-30 lg:top-0 justify-between lg:h-[60%]"
       >
         <div className="flex flex-col justify-between">
           <NavLink
